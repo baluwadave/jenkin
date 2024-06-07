@@ -44,6 +44,15 @@ pipeline {
             }
         }
     }
+        stage('Destroy') {
+            steps {
+                script {
+                    // Confirm before destroying the infrastructure
+                    input message: 'Approve to destroy the infrastructure?', ok: 'Destroy'
+                    sh 'terraform destroy -auto-approve'
+                }
+            }
+        }
 
     post {
         always {
