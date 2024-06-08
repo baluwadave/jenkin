@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the repository containing Terraform code
-                git url: 'https://github.com/your-repo/terraform-project.git', branch: 'main'
+                git url: 'https://github.com/baluwadave/terraform.git', branch: 'main'
             }
         }
         stage('Terraform Init') {
